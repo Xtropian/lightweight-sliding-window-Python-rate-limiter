@@ -1,0 +1,24 @@
+# ⚡ Lightweight Sliding Window Rate Limiter
+
+An ultra-lightweight, zero-dependency Python implementation of the **Sliding Window Log** algorithm for API throttling and traffic control. Perfect for microservices, testing, and small-scale applications.
+
+## ✨ Features
+- **Sliding Window Accuracy:** Eliminates request bursts at window boundaries (unlike Fixed Window algorithms).
+- **Zero Dependencies:** Built entirely using Python's standard libraries (`time`).
+- **Memory Efficient:** Dynamically cleans up expired timestamps on every request check.
+- **Developer Friendly:** Clean, fully commented, and easy to read.
+
+## 🚀 Quick Start
+
+```python
+from rate_limiter import SlidingWindowRateLimiter
+
+# Allow a maximum of 100 requests every 60 seconds
+limiter = SlidingWindowRateLimiter(max_requests=100, window_size_seconds=60)
+
+user_ip = "192.168.1.1"
+
+if limiter.is_allowed(user_ip):
+    print("Process the API request!")
+else:
+    print("429 Too Many Requests")

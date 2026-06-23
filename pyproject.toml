@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sliding-window-rate-limiter"
+version = "1.0.0"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+description = "A lightweight, zero-dependency Python implementation of the Sliding Window Log algorithm for API throttling."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
